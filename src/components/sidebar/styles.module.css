@@ -1,0 +1,67 @@
+:root {
+    /* Primary  */
+    --MarineBlue:hsl(213, 96%, 18%);
+    --PurpulishBlue:hsl(243, 100%, 62%);
+    --PastelBlue:hsl(228, 100%, 84%);
+    --LightBlue: hsl(206, 94%, 87%);
+    --StrawberryBlue: hsl(354, 84%, 57%)
+  
+    /* Neutral */
+    --CoolGray: hsl(231, 11%, 63%);
+    --LightGray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+  
+    /* Font Weights */
+    --Regular: 400;
+    --Medium: 500;
+    --Bold: 700;
+  }
+
+.sidebar_container {
+    background-image: url('../../assets/bg-sidebar-desktop.svg');
+    background-size: cover;
+    height: 75vh;
+    width: 18vw;
+    border-radius: 0.7rem;
+}
+.sidebar_wrapper {
+   padding-top: 0.8rem;
+}
+
+.sidebar_links_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.3rem;
+    margin: 2rem;
+}
+.sidebar_links_step {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sidebar_step_text {
+    color: hsl(231, 11%, 63%);
+    font-size: small;
+    font-weight: var(--Regular);
+}
+.sidebar_step_title {
+    color: hsl(0, 0%, 100%);
+    font-weight: var(--Bold);
+    font-size: small;
+    letter-spacing: 2px;
+}
+.sidebar_step_number {
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    padding: 0.4rem 0.6rem;
+    height: 30px;
+    width: 30px;
+    color: hsl(0, 0%, 100%);
+    font-size: small;
+    font-weight: var(--Medium);
+}
