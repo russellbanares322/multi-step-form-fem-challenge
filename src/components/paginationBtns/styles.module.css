@@ -1,0 +1,57 @@
+@import "../../App.css";
+
+.pagination_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.pagination_prev_btn {
+  color: hsl(231, 11%, 63%);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+.pagination_prev_btn:hover {
+  color: var(--marine-blue);
+}
+.pagination_wrapper button {
+  background-color: var(--marine-blue);
+  border: none;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  padding: 0.9rem 1.4rem;
+}
+.pagination_wrapper button:hover {
+  background-color: hsl(213, 84%, 29%);
+}
+
+@media (min-width: 60em) {
+  .pagination_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+  }
+  .pagination_prev_btn {
+    color: hsl(231, 11%, 63%);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .pagination_prev_btn:hover {
+    color: var(--marine-blue);
+  }
+  .pagination_wrapper button {
+    background-color: var(--marine-blue);
+    border: none;
+    border-radius: 0.5rem;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    padding: 0.9rem 1.4rem;
+  }
+  .pagination_wrapper button:hover {
+    background-color: hsl(213, 84%, 29%);
+  }
+}

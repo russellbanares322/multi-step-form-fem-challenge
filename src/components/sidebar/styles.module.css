@@ -1,30 +1,31 @@
 :root {
     /* Primary  */
-    --MarineBlue:hsl(213, 96%, 18%);
-    --PurpulishBlue:hsl(243, 100%, 62%);
-    --PastelBlue:hsl(228, 100%, 84%);
-    --LightBlue: hsl(206, 94%, 87%);
-    --StrawberryBlue: hsl(354, 84%, 57%)
+    --marine-blue:hsl(213, 96%, 18%);
+    --purpulish-blue:hsl(243, 100%, 62%);
+    --pastel-blue:hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-blue: hsl(354, 84%, 57%)
   
     /* Neutral */
-    --CoolGray: hsl(231, 11%, 63%);
-    --LightGray: hsl(229, 24%, 87%);
-    --Magnolia: hsl(217, 100%, 97%);
-    --Alabaster: hsl(231, 100%, 99%);
-    --White: hsl(0, 0%, 100%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
   
     /* Font Weights */
-    --Regular: 400;
-    --Medium: 500;
-    --Bold: 700;
+    --regular: 400;
+    --medium: 500;
+    --bold: 700;
   }
 
 .sidebar_container {
     background-image: url('../../assets/bg-sidebar-desktop.svg');
     background-size: cover;
     height: 75vh;
-    width: 18vw;
+    width: 15rem;
     border-radius: 0.7rem;
+    margin: 1rem 0.9rem;
 }
 .sidebar_wrapper {
    padding-top: 0.8rem;
@@ -35,33 +36,39 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 1.3rem;
-    margin: 2rem;
+    gap: 1.1rem;
+    margin: 1.5rem 0 0 2rem;
 }
 .sidebar_links_step {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 0.3rem;
 }
 .sidebar_step_text {
     color: hsl(231, 11%, 63%);
     font-size: small;
-    font-weight: var(--Regular);
+    font-weight: var(--regular);
+    margin-bottom: 0.3rem;
 }
 .sidebar_step_title {
-    color: hsl(0, 0%, 100%);
-    font-weight: var(--Bold);
+    color: var(--white);
+    font-weight: var(--bold);
     font-size: small;
     letter-spacing: 2px;
 }
 .sidebar_step_number {
-    border: 1px solid var(--White);
+    border: 1.5px solid var(--light-blue);
     border-radius: 50%;
     padding: 0.4rem 0.6rem;
     height: 30px;
     width: 30px;
-    color: hsl(0, 0%, 100%);
-    font-size: small;
-    font-weight: var(--Medium);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: var(--bold);
+}
+.sidebar_step_active {
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
 }

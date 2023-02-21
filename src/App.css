@@ -1,39 +1,79 @@
-/* Fonts */ 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); /* Regular 400, Bold 700, Medium 500*/
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"); /* Regular 400, bold 700, Medium 500*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 :root {
   /* Primary  */
-  --MarineBlue:hsl(213, 96%, 18%);
-  --PurpulishBlue:hsl(243, 100%, 62%);
-  --PastelBlue:hsl(228, 100%, 84%);
-  --LightBlue: hsl(206, 94%, 87%);
-  --StrawberryBlue: hsl(354, 84%, 57%)
+  --marine-blue:hsl(213, 96%, 18%);
+  --purpulish-blue:hsl(243, 100%, 62%);
+  --pastel-blue:hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-blue: hsl(354, 84%, 57%)
 
   /* Neutral */
-  --CoolGray: hsl(231, 11%, 63%)
-  --LightGray: hsl(229, 24%, 87%)
-  --Magnolia: hsl(217, 100%, 97%)
-  --Alabaster: hsl(231, 100%, 99%)
-  --White: hsl(0, 0%, 100%)
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
 
   /* Font Weights */
-  --Regular: 400;
-  --Medium: 500;
-  --Bold: 700;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
 }
+
 p {
-  font-size: 16px;
+  font-size: 15px;
+  color: hsl(231, 11%, 63%);
 }
 h1 {
   font-size: 28px;
+  text-align: start;
+  color: var(--marine-blue);
+  padding: 3rem 0 0.5rem 0;
+  font-weight: var(--bold);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 2rem;
+  gap: 0.6rem;
+}
+label {
+  color: var(--marine-blue);
+  font-size: 14px;
+  font-weight: var(--bold) !important;
+  margin-top: 0.3rem;
+}
+input {
+  width: 100%;
+  height: 2.6rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: 1px solid var(--light-gray);
+  font-weight: var(--bold);
+  color: var(--marine-blue);
+  padding: 1rem;
+  font-size: 14px;
+}
+input:focus {
+  border: 1px solid var(--purpulish-blue);
+}
+::placeholder {
+  color: hsl(231, 11%, 63%);
+  font-size: 13.4px;
 }
 
 .App {
-  height: 100vh;
+  background-color: rgb(238, 245, 255);
+  height: auto;
+  padding: 3rem 0 5rem 0;
 }

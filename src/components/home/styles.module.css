@@ -1,7 +1,18 @@
-.home_container {
+@import "../../App.css";
+
+.home_content {
+  flex: 1;
+}
+@media (min-width: 60em) {
+  .home_content {
+    background-color: hsl(0, 0%, 100%);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5rem;
+    width: 52rem;
+    height: 33.3rem;
+    border-radius: 0.7rem;
+    margin: 0 auto;
+  }
 }
