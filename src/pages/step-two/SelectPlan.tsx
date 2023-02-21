@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import { PaginationButton } from "../../components/paginationBtns/PaginationButton";
+import { planData } from "./planData";
 
 export function SelectPlan() {
   const [isToggled, setIsToggled] = useState(false);
 
+  //Color of month indicator depending on toggle
   const inactiveMonthColor = isToggled
     ? "hsl(213, 96%, 18%)"
     : "hsl(231, 11%, 63%)";
@@ -12,6 +14,9 @@ export function SelectPlan() {
     ? "hsl(213, 96%, 18%)"
     : "hsl(231, 11%, 63%)";
 
+  //Month indicator in price
+  const selectedMonth = isToggled ? "yr" : "mo";
+  //Toggle button for monthly and yearly plan
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
@@ -21,21 +26,23 @@ export function SelectPlan() {
       <h1>Select Plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
       <div className={styles.billing_card_wrapper}>
-        <div className={styles.billing_card}>
-          <img src="../src/assets/icon-arcade.svg" />
-          <span>Arcade</span>
-          <p>$9/mo</p>
-        </div>
-        <div className={styles.billing_card}>
-          <img src="../src/assets/icon-advanced.svg" />
-          <span>Advanced</span>
-          <p>$12/mo</p>
-        </div>
-        <div className={styles.billing_card}>
-          <img src="../src/assets/icon-pro.svg" />
-          <span>Pro</span>
-          <p>$15/mo</p>
-        </div>
+        {planData.map((plan) => (
+          <div
+            key={plan.id}
+            className={styles.billing_card}
+            style={{
+              borderColor:
+                plan.id == 1 ? "hsl(243, 100%, 62%)" : "hsl(229, 24%, 87%)",
+            }}
+          >
+            <img src={plan.icon} />
+            <span>{plan.name}</span>
+            <p>
+              ${isToggled ? plan.price * 10 : plan.price}/{selectedMonth}
+            </p>
+            {isToggled && <p className={styles.freebie}>{plan.freebie}</p>}
+          </div>
+        ))}
       </div>
       <div className={styles.billing_date_wrapper}>
         <span

@@ -14,22 +14,25 @@
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid hsl(229, 24%, 87%);
-    width: 7.4rem;
-    height: 9rem;
-    padding: 0.9rem 0.8rem 0.3rem 0.8rem;
+    width: 7.6rem;
+    height: auto;
+    padding: 0.9rem 0.8rem 0.9rem 0.8rem;
     border-radius: 0.5rem;
   }
   .billing_card span {
     color: var(--marine-blue);
     font-weight: var(--bold);
-    padding: 2.5rem 0 0.5rem 0;
+    padding: 2.5rem 0 0.1rem 0;
     font-size: 0.9rem;
   }
   .billing_card img {
     height: 2.2rem;
     width: 2.2rem;
   }
-
+  .billing_card p {
+    padding-top: 0.5rem;
+    font-size: 13px;
+  }
   .billing_date_wrapper {
     margin-top: 2.4rem;
     display: flex;
@@ -39,6 +42,11 @@
     gap: 1.5rem;
     border-radius: 0.2rem;
     padding: 0.6rem 0;
+  }
+  .freebie {
+    font-size: 11.5px !important;
+    color: var(--marine-blue);
+    font-weight: 500;
   }
 
   .billing_date_wrapper span {
