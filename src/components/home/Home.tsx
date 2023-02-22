@@ -1,6 +1,6 @@
 //  import { Summary } from "../../pages/step-four/Summary";
 import { PersonalInfo } from "../../pages/step-one/PersonalInfo";
-//  import { AddOns } from "../../pages/step-three/AddOns";
+import { AddOns } from "../../pages/step-three/AddOns";
 import { useContext } from "react";
 import { SelectPlan } from "../../pages/step-two/SelectPlan";
 import PaginationContext from "../context/PaginationContext";
@@ -12,7 +12,7 @@ export function Home() {
 
   const pageOne = state.pageNumber === 1;
   const pageTwo = state.pageNumber === 2;
-  // const pageThree = state.pageNumber === 3;
+  const pageThree = state.pageNumber === 3;
   // const pageFour = state.pageNumber === 4;
 
   return (
@@ -23,7 +23,7 @@ export function Home() {
       <div>
         {pageOne && <PersonalInfo />}
         {pageTwo && <SelectPlan />}
-        {/* <AddOns /> */}
+        {pageThree && <AddOns />}
         {/* <Summary /> */}
       </div>
     </div>

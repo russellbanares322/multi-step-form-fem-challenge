@@ -4,11 +4,13 @@ import React, { createContext, useReducer } from "react";
 type TPaginationState = {
   pageNumber: number;
   isButtonDisabled: boolean;
+  isToggled: boolean;
 };
 
 enum TPaginationActionKind {
   SET_DECREMENT_PAGENUM = "SET_DECREMENT_PAGENUM",
   SET_INCREMENT_PAGENUM = "SET_INCREMENT_PAGENUM",
+  SET_TOGGLE_PLAN_BTN = " SET_TOGGLE_PLAN_BTN",
 }
 
 type TPaginationAction = {
@@ -18,6 +20,7 @@ type TPaginationAction = {
 const initialState = {
   pageNumber: 1,
   isButtonDisabled: true,
+  isToggled: false,
 };
 
 const reducer = (state: TPaginationState, action: TPaginationAction) => {
@@ -40,6 +43,11 @@ const reducer = (state: TPaginationState, action: TPaginationAction) => {
       return {
         isButtonDisabled: false,
         pageNumber: state.pageNumber + 1,
+      };
+    case TPaginationActionKind.SET_TOGGLE_PLAN_BTN:
+      return {
+        ...state,
+        isToggled: !state.isToggled,
       };
 
     default:

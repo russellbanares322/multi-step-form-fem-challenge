@@ -2,6 +2,7 @@
 
 .home_content {
   flex: 1;
+  background-color: hsl(0, 0%, 100%);
 }
 @media (min-width: 60em) {
   .home_content {

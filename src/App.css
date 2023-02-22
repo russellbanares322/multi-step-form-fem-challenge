@@ -69,7 +69,8 @@ input:focus {
 }
 ::placeholder {
   color: hsl(231, 11%, 63%);
-  font-size: 13.4px;
+  font-size: 13.2px;
+  letter-spacing: 0.9px;
 }
 
 .App {

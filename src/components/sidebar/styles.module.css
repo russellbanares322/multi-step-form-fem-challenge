@@ -22,7 +22,8 @@
 .sidebar_container {
     background-image: url('../../assets/bg-sidebar-desktop.svg');
     background-size: cover;
-    height: 75vh;
+    height: auto;
+    padding-bottom: 15rem;
     width: 15rem;
     border-radius: 0.7rem;
     margin: 1rem 0.9rem;

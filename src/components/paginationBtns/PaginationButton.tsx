@@ -5,10 +5,12 @@ import styles from "./styles.module.css";
 export function PaginationButton() {
   const { state, dispatch } = useContext(PaginationContext);
 
-  const handlePrevPage = () => {
+  const handlePrevPage = (e) => {
+    e.preventDefault();
     dispatch({ type: "SET_DECREMENT_PAGENUM" });
   };
-  const handleNextPage = () => {
+  const handleNextPage = (e) => {
+    e.preventDefault();
     dispatch({ type: "SET_INCREMENT_PAGENUM" });
   };
 
@@ -19,7 +21,7 @@ export function PaginationButton() {
         className={styles.pagination_prev_btn}
         onClick={handlePrevPage}
       >
-        Go Back {state.pageNumber}
+        Go Back
       </span>
       <button onClick={handleNextPage}>Next Step</button>
     </div>

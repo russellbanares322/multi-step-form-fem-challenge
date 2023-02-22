@@ -33,6 +33,7 @@ export function SelectPlan() {
             style={{
               borderColor:
                 plan.id == 1 ? "hsl(243, 100%, 62%)" : "hsl(229, 24%, 87%)",
+              backgroundColor: plan.id == 1 ? "hsl(231, 100%, 99%)" : "none",
             }}
           >
             <img src={plan.icon} />
