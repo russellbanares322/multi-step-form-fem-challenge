@@ -1,4 +1,4 @@
-//  import { Summary } from "../../pages/step-four/Summary";
+import { Summary } from "../../pages/step-four/Summary";
 import { PersonalInfo } from "../../pages/step-one/PersonalInfo";
 import { AddOns } from "../../pages/step-three/AddOns";
 import { useContext } from "react";
@@ -6,6 +6,7 @@ import { SelectPlan } from "../../pages/step-two/SelectPlan";
 import PaginationContext from "../context/PaginationContext";
 import { Sidebar } from "../sidebar/Sidebar";
 import styles from "./styles.module.css";
+import { PaginationButton } from "../paginationBtns/PaginationButton";
 
 export function Home() {
   const { state } = useContext(PaginationContext);
@@ -13,7 +14,7 @@ export function Home() {
   const pageOne = state.pageNumber === 1;
   const pageTwo = state.pageNumber === 2;
   const pageThree = state.pageNumber === 3;
-  // const pageFour = state.pageNumber === 4;
+  const pageFour = state.pageNumber === 4;
 
   return (
     <div className={styles.home_content}>
@@ -24,7 +25,8 @@ export function Home() {
         {pageOne && <PersonalInfo />}
         {pageTwo && <SelectPlan />}
         {pageThree && <AddOns />}
-        {/* <Summary /> */}
+        {pageFour && <Summary />}
+        <PaginationButton />
       </div>
     </div>
   );

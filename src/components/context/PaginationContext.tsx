@@ -10,7 +10,7 @@ type TPaginationState = {
 enum TPaginationActionKind {
   SET_DECREMENT_PAGENUM = "SET_DECREMENT_PAGENUM",
   SET_INCREMENT_PAGENUM = "SET_INCREMENT_PAGENUM",
-  SET_TOGGLE_PLAN_BTN = " SET_TOGGLE_PLAN_BTN",
+  SET_TOGGLE_PLAN_BTN = "SET_TOGGLE_PLAN_BTN",
 }
 
 type TPaginationAction = {
@@ -30,17 +30,25 @@ const reducer = (state: TPaginationState, action: TPaginationAction) => {
     case TPaginationActionKind.SET_DECREMENT_PAGENUM:
       if (state.pageNumber <= 2) {
         return {
+          ...state,
           pageNumber: state.pageNumber - 1,
           isButtonDisabled: true,
+        };
+      } else if (state.pageNumber > 2) {
+        return {
+          ...state,
+          pageNumber: state.pageNumber - 1,
+          isButtonDisabled: false,
         };
       } else {
         return {
           ...state,
-          pageNumber: state.pageNumber - 1,
+          isButtonDisabled: false,
         };
       }
     case TPaginationActionKind.SET_INCREMENT_PAGENUM:
       return {
+        ...state,
         isButtonDisabled: false,
         pageNumber: state.pageNumber + 1,
       };

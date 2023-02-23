@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import { PaginationButton } from "../../components/paginationBtns/PaginationButton";
 
 export function PersonalInfo() {
   return (
@@ -14,7 +13,6 @@ export function PersonalInfo() {
         <label>Phone Number</label>
         <input inputMode="numeric" placeholder="e.g. +1 234 567 890" />
       </form>
-      <PaginationButton />
     </div>
   );
 }

@@ -5,11 +5,12 @@ import styles from "./styles.module.css";
 export function PaginationButton() {
   const { state, dispatch } = useContext(PaginationContext);
 
-  const handlePrevPage = (e) => {
+  const confirmButtonDisplay = state.pageNumber === 4 ? true : false;
+  const handlePrevPage = (e: any) => {
     e.preventDefault();
     dispatch({ type: "SET_DECREMENT_PAGENUM" });
   };
-  const handleNextPage = (e) => {
+  const handleNextPage = (e: any) => {
     e.preventDefault();
     dispatch({ type: "SET_INCREMENT_PAGENUM" });
   };
@@ -23,7 +24,20 @@ export function PaginationButton() {
       >
         Go Back
       </span>
-      <button onClick={handleNextPage}>Next Step</button>
+      {!confirmButtonDisplay && (
+        <button className={styles.pagination_next_btn} onClick={handleNextPage}>
+          Next Step
+        </button>
+      )}
+
+      {confirmButtonDisplay && (
+        <button
+          className={styles.pagination_confirm_btn}
+          onClick={handleNextPage}
+        >
+          Confirm
+        </button>
+      )}
     </div>
   );
 }

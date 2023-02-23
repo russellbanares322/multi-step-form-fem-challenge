@@ -74,13 +74,13 @@
 
 @media (min-width: 60em) {
   .second_step_wrapper {
-    width: 105%;
+    width: 24.25rem;
+    height: 24.25rem;
   }
   .billing_card_wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1rem;
     margin-top: 2.5rem;
   }
   .billing_card {

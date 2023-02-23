@@ -1,75 +1,56 @@
-:root {
-    /* Primary  */
-    --marine-blue:hsl(213, 96%, 18%);
-    --purpulish-blue:hsl(243, 100%, 62%);
-    --pastel-blue:hsl(228, 100%, 84%);
-    --light-blue: hsl(206, 94%, 87%);
-    --strawberry-blue: hsl(354, 84%, 57%)
-  
-    /* Neutral */
-    --cool-gray: hsl(231, 11%, 63%);
-    --light-gray: hsl(229, 24%, 87%);
-    --magnolia: hsl(217, 100%, 97%);
-    --alabaster: hsl(231, 100%, 99%);
-    --white: hsl(0, 0%, 100%);
-  
-    /* Font Weights */
-    --regular: 400;
-    --medium: 500;
-    --bold: 700;
-  }
+@import "../../App.css";
 
 .sidebar_container {
-    background-image: url('../../assets/bg-sidebar-desktop.svg');
-    background-size: cover;
-    height: auto;
-    padding-bottom: 15rem;
-    width: 15rem;
-    border-radius: 0.7rem;
-    margin: 1rem 0.9rem;
+  background-image: url("../../assets/bg-sidebar-desktop.svg");
+  background-size: cover;
+  height: auto;
+  padding-bottom: 15rem;
+  width: 15rem;
+  border-radius: 0.7rem;
+  margin: 1rem 0.9rem;
 }
 .sidebar_wrapper {
-   padding-top: 0.8rem;
+  padding-top: 0.8rem;
 }
 
 .sidebar_links_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.1rem;
-    margin: 1.5rem 0 0 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 1.5rem 0 0 2rem;
 }
 .sidebar_links_step {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
 }
 .sidebar_step_text {
-    color: hsl(231, 11%, 63%);
-    font-size: small;
-    font-weight: var(--regular);
-    margin-bottom: 0.3rem;
+  color: hsl(231, 11%, 63%);
+  font-size: small;
+  font-weight: var(--regular);
+  margin-bottom: 0.3rem;
 }
 .sidebar_step_title {
-    color: var(--white);
-    font-weight: var(--bold);
-    font-size: small;
-    letter-spacing: 2px;
+  color: var(--white);
+  font-weight: var(--medium);
+  font-size: small;
+  letter-spacing: 1px;
 }
 .sidebar_step_number {
-    border: 1.5px solid var(--light-blue);
-    border-radius: 50%;
-    padding: 0.4rem 0.6rem;
-    height: 30px;
-    width: 30px;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: var(--bold);
+  border: 1.5px solid var(--light-blue);
+  border-radius: 50%;
+  padding: 0.4rem 0.6rem;
+  height: 30px;
+  width: 30px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: var(--bold);
 }
 .sidebar_step_active {
-    background-color: var(--light-blue);
-    color: var(--marine-blue);
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
 }

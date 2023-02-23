@@ -1,10 +1,14 @@
 import styles from "./styles.module.css";
 import { addonsData as AddonsData } from "./addonsData";
-import { PaginationButton } from "../../components/paginationBtns/PaginationButton";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import PaginationContext from "../../components/context/PaginationContext";
 
 export function AddOns() {
   const [addonsData, setAddonsData] = useState(AddonsData);
+  const { state } = useContext(PaginationContext);
+
+  //Month indicator in price
+  const selectedMonth = state.isToggled ? "yr" : "mo";
 
   const handleChange = (selectedAddonIndex: number) => {
     const addons = [...addonsData];
@@ -42,12 +46,12 @@ export function AddOns() {
               <span className={styles.title}>{addon.title}</span>
               <span className={styles.details}>{addon.details}</span>
             </div>
-            <span className={styles.price}>+${addon.price}/mo</span>
+            <span className={styles.price}>
+              +${state.isToggled ? addon.price * 10 : addon.price}/
+              {selectedMonth}
+            </span>
           </div>
         ))}
-        <div className={styles.pagination}>
-          <PaginationButton />
-        </div>
       </div>
     </div>
   );

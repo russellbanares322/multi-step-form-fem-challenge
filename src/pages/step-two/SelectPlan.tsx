@@ -1,25 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./styles.module.css";
-import { PaginationButton } from "../../components/paginationBtns/PaginationButton";
 import { planData } from "./planData";
+import PaginationContext from "../../components/context/PaginationContext";
 
 export function SelectPlan() {
-  const [isToggled, setIsToggled] = useState(false);
+  const { state, dispatch } = useContext(PaginationContext);
+
+  //Toggle button for monthly and yearly plan
+  const handleTogglePlan = () => {
+    dispatch({ type: "SET_TOGGLE_PLAN_BTN" });
+  };
 
   //Color of month indicator depending on toggle
-  const inactiveMonthColor = isToggled
+  const inactiveMonthColor = state.isToggled
     ? "hsl(213, 96%, 18%)"
     : "hsl(231, 11%, 63%)";
-  const activeMonthColor = !isToggled
+  const activeMonthColor = !state.isToggled
     ? "hsl(213, 96%, 18%)"
     : "hsl(231, 11%, 63%)";
 
   //Month indicator in price
-  const selectedMonth = isToggled ? "yr" : "mo";
-  //Toggle button for monthly and yearly plan
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
-  };
+  const selectedMonth = state.isToggled ? "yr" : "mo";
 
   return (
     <div className={styles.second_step_wrapper}>
@@ -39,9 +40,11 @@ export function SelectPlan() {
             <img src={plan.icon} />
             <span>{plan.name}</span>
             <p>
-              ${isToggled ? plan.price * 10 : plan.price}/{selectedMonth}
+              ${state.isToggled ? plan.price * 10 : plan.price}/{selectedMonth}
             </p>
-            {isToggled && <p className={styles.freebie}>{plan.freebie}</p>}
+            {state.isToggled && (
+              <p className={styles.freebie}>{plan.freebie}</p>
+            )}
           </div>
         ))}
       </div>
@@ -53,9 +56,9 @@ export function SelectPlan() {
         >
           Monthly
         </span>
-        <div onClick={handleToggle} className={styles.toggle_wrapper}>
+        <div onClick={handleTogglePlan} className={styles.toggle_wrapper}>
           <div
-            style={{ right: isToggled ? "0.2rem" : "1.2rem" }}
+            style={{ right: state.isToggled ? "0.2rem" : "1.2rem" }}
             className={styles.toggle_btn}
           ></div>
         </div>
@@ -67,7 +70,6 @@ export function SelectPlan() {
           Yearly
         </span>
       </div>
-      <PaginationButton />
     </div>
   );
 }

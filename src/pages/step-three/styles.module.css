@@ -1,6 +1,10 @@
 @import "../../App.css";
 
 @media (min-width: 60em) {
+  .step_three_wrapper {
+    width: 24.25rem;
+    height: 24.25rem;
+  }
   .addons_wrapper {
     display: flex;
     flex-direction: column;
@@ -17,7 +21,7 @@
     margin-top: 0.8rem;
     border: 1px solid var(--light-gray);
     padding: 1rem 1.3rem;
-    width: 120%;
+    width: 24.25rem;
     border-radius: 0.5rem;
   }
   .addons_card input {
