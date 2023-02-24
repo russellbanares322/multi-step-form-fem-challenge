@@ -5,6 +5,11 @@ import PaginationContext from "../../components/context/PaginationContext";
 
 export function SelectPlan() {
   const { state, dispatch } = useContext(PaginationContext);
+  const [selectedPlan, setSelectedPlan] = useState(1);
+
+  const handleSelectPlan = (selectedID: any) => {
+    setSelectedPlan(selectedID);
+  };
 
   //Toggle button for monthly and yearly plan
   const handleTogglePlan = () => {
@@ -29,12 +34,13 @@ export function SelectPlan() {
       <div className={styles.billing_card_wrapper}>
         {planData.map((plan) => (
           <div
+            onClick={() => handleSelectPlan(plan.id)}
             key={plan.id}
             className={styles.billing_card}
             style={{
-              borderColor:
-                plan.id == 1 ? "hsl(243, 100%, 62%)" : "hsl(229, 24%, 87%)",
-              backgroundColor: plan.id == 1 ? "hsl(231, 100%, 99%)" : "none",
+              borderColor: plan.id == selectedPlan ? "hsl(243, 100%, 62%)" : "",
+              backgroundColor:
+                plan.id == selectedPlan ? "hsl(231, 100%, 99%)" : "none",
             }}
           >
             <img src={plan.icon} />

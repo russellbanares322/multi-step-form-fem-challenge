@@ -15,6 +15,7 @@ export function Home() {
   const pageTwo = state.pageNumber === 2;
   const pageThree = state.pageNumber === 3;
   const pageFour = state.pageNumber === 4;
+  const hidePagination = state.isConfirmed;
 
   return (
     <div className={styles.home_content}>
@@ -26,7 +27,7 @@ export function Home() {
         {pageTwo && <SelectPlan />}
         {pageThree && <AddOns />}
         {pageFour && <Summary />}
-        <PaginationButton />
+        {!hidePagination && <PaginationButton />}
       </div>
     </div>
   );

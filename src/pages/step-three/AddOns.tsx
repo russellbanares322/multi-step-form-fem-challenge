@@ -17,8 +17,6 @@ export function AddOns() {
     addons[selectedAddonIndex] = addon;
 
     setAddonsData(addons);
-
-    console.log(addons);
   };
 
   return (

@@ -5,6 +5,11 @@
     width: 24.25rem;
     height: 24.25rem;
   }
+  .confirmation_wrapper {
+    width: 24.25rem;
+    height: 24.25rem;
+    padding: 10rem 0;
+  }
   .price_wrapper {
     background-color: var(--alabaster);
     padding: 1.5rem;
@@ -58,5 +63,25 @@
     font-size: 1.1rem;
     color: var(--purpulish-blue);
     font-weight: var(--bold);
+  }
+  .confirmation_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .confirmation_details h1 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .confirmation_details img {
+    width: 4.5rem !important;
+    height: 4.5rem !important;
+  }
+  .confirmation_details p {
+    text-align: center !important;
+    width: 30rem !important;
+    padding: 0 2rem !important;
+    line-height: 1.5 !important;
   }
 }

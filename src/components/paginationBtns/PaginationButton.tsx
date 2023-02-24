@@ -6,6 +6,7 @@ export function PaginationButton() {
   const { state, dispatch } = useContext(PaginationContext);
 
   const confirmButtonDisplay = state.pageNumber === 4 ? true : false;
+
   const handlePrevPage = (e: any) => {
     e.preventDefault();
     dispatch({ type: "SET_DECREMENT_PAGENUM" });

@@ -21,6 +21,7 @@ const initialState = {
   pageNumber: 1,
   isButtonDisabled: true,
   isToggled: false,
+  isConfirmed: false,
 };
 
 const reducer = (state: TPaginationState, action: TPaginationAction) => {
@@ -47,11 +48,19 @@ const reducer = (state: TPaginationState, action: TPaginationAction) => {
         };
       }
     case TPaginationActionKind.SET_INCREMENT_PAGENUM:
-      return {
-        ...state,
-        isButtonDisabled: false,
-        pageNumber: state.pageNumber + 1,
-      };
+      if (state.pageNumber === 4) {
+        return {
+          ...state,
+          pageNumber: state.pageNumber,
+          isConfirmed: true,
+        };
+      } else {
+        return {
+          ...state,
+          isButtonDisabled: false,
+          pageNumber: state.pageNumber + 1,
+        };
+      }
     case TPaginationActionKind.SET_TOGGLE_PLAN_BTN:
       return {
         ...state,
