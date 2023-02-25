@@ -22,7 +22,7 @@ export function Home() {
       <div>
         <Sidebar />
       </div>
-      <div>
+      <div className={styles.right_content}>
         {pageOne && <PersonalInfo />}
         {pageTwo && <SelectPlan />}
         {pageThree && <AddOns />}

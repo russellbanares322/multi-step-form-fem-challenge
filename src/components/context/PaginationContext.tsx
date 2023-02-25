@@ -5,6 +5,7 @@ type TPaginationState = {
   pageNumber: number;
   isButtonDisabled: boolean;
   isToggled: boolean;
+  isConfirmed: boolean;
 };
 
 enum TPaginationActionKind {
@@ -24,7 +25,10 @@ const initialState = {
   isConfirmed: false,
 };
 
-const reducer = (state: TPaginationState, action: TPaginationAction) => {
+const reducer = (
+  state: TPaginationState,
+  action: TPaginationAction
+): TPaginationState => {
   const { type } = action;
 
   switch (type) {
@@ -73,12 +77,12 @@ const reducer = (state: TPaginationState, action: TPaginationAction) => {
 };
 const PaginationContext = createContext({ initialState });
 
-export const PaginationProvider = (props: any) => {
+export const PaginationProvider = (props: React.ReactNode) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <PaginationContext.Provider value={{ state, dispatch }}>
-      {props.children}
+      {props?.children}
     </PaginationContext.Provider>
   );
 };

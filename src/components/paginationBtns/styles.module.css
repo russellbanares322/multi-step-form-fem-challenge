@@ -4,8 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4.6rem;
   font-weight: var(--medium);
+  background-color: var(--white);
+  width: 100%;
+  height: 12vh;
+  padding: 1rem;
 }
 .pagination_prev_btn {
   color: hsl(231, 11%, 63%);
@@ -19,6 +22,22 @@
 .pagination_next_btn {
   background-color: var(--marine-blue);
   border: none;
+  border-radius: 0.2rem;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  height: 2.5rem;
+  width: 6.4rem;
+  font-weight: var(--medium);
+  margin: 0;
+}
+
+.pagination_next_btn:hover {
+  background-color: hsl(213, 84%, 29%);
+}
+
+.pagination_confirm_btn {
+  background-color: var(--purpulish-blue);
+  border: none;
   border-radius: 0.5rem;
   color: hsl(0, 0%, 100%);
   cursor: pointer;
@@ -27,16 +46,15 @@
   font-weight: var(--medium);
 }
 
-.pagination_next_btn:hover {
-  background-color: hsl(213, 84%, 29%);
-}
-
 @media (min-width: 60em) {
   .pagination_wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 24.25rem;
+    padding: 0;
+    height: auto;
+    margin-top: 4rem;
   }
   .pagination_prev_btn {
     color: hsl(231, 11%, 63%);
@@ -50,7 +68,7 @@
   .pagination_next_btn {
     background-color: var(--marine-blue);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     color: hsl(0, 0%, 100%);
     cursor: pointer;
     height: 2.5rem;

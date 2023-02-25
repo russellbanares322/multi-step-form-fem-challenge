@@ -7,11 +7,11 @@ export function PaginationButton() {
 
   const confirmButtonDisplay = state.pageNumber === 4 ? true : false;
 
-  const handlePrevPage = (e: any) => {
+  const handlePrevPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch({ type: "SET_DECREMENT_PAGENUM" });
   };
-  const handleNextPage = (e: any) => {
+  const handleNextPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch({ type: "SET_INCREMENT_PAGENUM" });
   };

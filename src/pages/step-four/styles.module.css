@@ -1,4 +1,87 @@
 @import "../../App.css";
+.fourth_step_wrapper {
+  width: 24.25rem;
+  height: 24.25rem;
+}
+.confirmation_wrapper {
+  width: 24.25rem;
+  height: 24.25rem;
+  padding: 10rem 0;
+}
+.price_wrapper {
+  background-color: var(--alabaster);
+  padding: 1.5rem;
+  margin: 2.19rem 0 0.1rem 0;
+  border-radius: 0.5rem;
+}
+.total_price_wrapper {
+  padding: 1.5rem;
+}
+.plan_type_price,
+.service_wrapper,
+.storage_wrapper,
+.total_price_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plan_type_price {
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 1.3rem;
+}
+.service_wrapper {
+  margin-top: 1rem;
+}
+.storage_wrapper {
+  margin-top: 0.9rem;
+}
+.arcade,
+.arcade_price {
+  font-size: 14.2px;
+  color: var(--marine-blue);
+  font-weight: var(--bold);
+}
+.change {
+  padding-top: 0.3rem;
+  text-decoration: underline;
+}
+.service,
+.storage,
+.change,
+.total {
+  font-size: 13px;
+}
+.service_price,
+.storage_price {
+  font-size: 13px;
+  color: var(--marine-blue);
+  font-weight: var(--medium);
+}
+.total_price {
+  font-size: 1.1rem;
+  color: var(--purpulish-blue);
+  font-weight: var(--bold);
+}
+.confirmation_details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.confirmation_details h1 {
+  padding-top: 2rem !important;
+  padding-bottom: 1rem !important;
+}
+.confirmation_details img {
+  width: 4.5rem !important;
+  height: 4.5rem !important;
+}
+.confirmation_details p {
+  text-align: center !important;
+  width: 30rem !important;
+  padding: 0 2rem !important;
+  line-height: 1.5 !important;
+}
 
 @media (min-width: 60em) {
   .fourth_step_wrapper {

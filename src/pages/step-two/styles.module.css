@@ -6,14 +6,15 @@
   align-items: flex-start;
   gap: 1rem;
   margin-top: 2.5rem;
+  flex-direction: column;
 }
 .billing_card {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   border: 1px solid hsl(229, 24%, 87%);
-  width: 7.6rem;
+  width: 100%;
   height: auto;
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
   border-radius: 0.5rem;
@@ -41,7 +42,7 @@
   justify-content: center;
   gap: 1.5rem;
   border-radius: 0.2rem;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 .freebie {
   font-size: 11.5px !important;
@@ -83,6 +84,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 2.5rem;
+    flex-direction: row;
   }
   .billing_card {
     display: flex;
