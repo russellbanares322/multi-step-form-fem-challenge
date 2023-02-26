@@ -44,13 +44,16 @@ export function SelectPlan() {
             }}
           >
             <img src={plan.icon} />
-            <span>{plan.name}</span>
-            <p>
-              ${state.isToggled ? plan.price * 10 : plan.price}/{selectedMonth}
-            </p>
-            {state.isToggled && (
-              <p className={styles.freebie}>{plan.freebie}</p>
-            )}
+            <div>
+              <span>{plan.name}</span>
+              <p>
+                ${state.isToggled ? plan.price * 10 : plan.price}/
+                {selectedMonth}
+              </p>
+              {state.isToggled && (
+                <p className={styles.freebie}>{plan.freebie}</p>
+              )}
+            </div>
           </div>
         ))}
       </div>
