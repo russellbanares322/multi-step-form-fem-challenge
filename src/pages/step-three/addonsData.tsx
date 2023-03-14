@@ -1,4 +1,11 @@
-export const addonsData = [
+type PaginationData = {
+  title: string;
+  details: string;
+  price: number;
+  isChecked: boolean;
+};
+
+export const addonsData: PaginationData[] = [
   {
     title: "Online service",
     details: "Access to multiplayer games",

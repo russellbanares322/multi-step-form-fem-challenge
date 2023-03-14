@@ -10,7 +10,7 @@ import { PaginationButton } from "../paginationBtns/PaginationButton";
 
 export function Home() {
   const { state } = useContext(PaginationContext);
-  const [isDesktopMode, setIsDesktopMode] = useState(true);
+  const [isDesktopMode, setIsDesktopMode] = useState<boolean>(true);
 
   const pageOne = state.pageNumber === 1;
   const pageTwo = state.pageNumber === 2;

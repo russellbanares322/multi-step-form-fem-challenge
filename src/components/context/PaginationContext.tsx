@@ -1,23 +1,26 @@
 import React, { createContext, useReducer } from "react";
 
 //Types and enum
-type TPaginationState = {
+export type TPaginationState = {
   pageNumber: number;
   isButtonDisabled: boolean;
   isToggled: boolean;
   isConfirmed: boolean;
 };
 
-enum TPaginationActionKind {
+export enum EPaginationActionKind {
   SET_DECREMENT_PAGENUM = "SET_DECREMENT_PAGENUM",
   SET_INCREMENT_PAGENUM = "SET_INCREMENT_PAGENUM",
   SET_TOGGLE_PLAN_BTN = "SET_TOGGLE_PLAN_BTN",
 }
 
-type TPaginationAction = {
-  type: TPaginationActionKind;
+export type TPaginationAction = {
+  type: EPaginationActionKind;
 };
 
+export type TState = {
+  initialState: object;
+};
 const initialState = {
   pageNumber: 1,
   isButtonDisabled: true,
@@ -32,7 +35,7 @@ const reducer = (
   const { type } = action;
 
   switch (type) {
-    case TPaginationActionKind.SET_DECREMENT_PAGENUM:
+    case EPaginationActionKind.SET_DECREMENT_PAGENUM:
       if (state.pageNumber <= 2) {
         return {
           ...state,
@@ -51,7 +54,7 @@ const reducer = (
           isButtonDisabled: false,
         };
       }
-    case TPaginationActionKind.SET_INCREMENT_PAGENUM:
+    case EPaginationActionKind.SET_INCREMENT_PAGENUM:
       if (state.pageNumber === 4) {
         return {
           ...state,
@@ -65,7 +68,7 @@ const reducer = (
           pageNumber: state.pageNumber + 1,
         };
       }
-    case TPaginationActionKind.SET_TOGGLE_PLAN_BTN:
+    case EPaginationActionKind.SET_TOGGLE_PLAN_BTN:
       return {
         ...state,
         isToggled: !state.isToggled,
@@ -77,12 +80,12 @@ const reducer = (
 };
 const PaginationContext = createContext({ initialState });
 
-export const PaginationProvider = (props: React.ReactNode) => {
+export const PaginationProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <PaginationContext.Provider value={{ state, dispatch }}>
-      {props?.children}
+      {children}
     </PaginationContext.Provider>
   );
 };
